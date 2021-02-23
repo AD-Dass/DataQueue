@@ -1,43 +1,27 @@
 
-class Queue():
-    def __init__(self,queue_size):
+class Queue(): #First in - First out
+    def __init__(self,queue_size): #initialise the queue
         self.queue = []
         self.cap = queue_size
 
-    def push(self,data_input):
-        if len(self.queue) < self.cap:
+    def push(self,data_input): #add stuff to the queue
+        if len(self.queue) < self.cap: #conditional statement to see if the queue is full
             self.queue.append(data_input)
             print('New item added to the queue')
-        else:
+        else: 
             print('Queue is full')
 
-    def pull(self):
+    def pull(self): #Pull from the queue
         data_output = self.queue.pop(0)
         return data_output
 
-    def empty(self):
+    def empty(self): #Empty the queue for whatever reason you may need
         for i in range(len(self.queue)):
             self.queue.pop(-1)
         print('Queue has been emptied')
 
-    def show(self):
+    def show(self): #print the queued list.
         print(self.queue)
 
-if __name__=='__main__':
-    MyQueue = Queue(3)
-    MyQueue.push(1)
-    MyQueue.push(2)
-    MyQueue.push(3)
-    MyQueue.push(4)
-    MyQueue.show()
-    iasked=MyQueue.pull()
-    print(iasked)
-    iasked=MyQueue.pull()
-    print(iasked)
-    iasked=MyQueue.pull()
-    print(iasked)
-    MyQueue.push(4)
-    MyQueue.show()
-    MyQueue.empty()
-    MyQueue.show()
+
         
